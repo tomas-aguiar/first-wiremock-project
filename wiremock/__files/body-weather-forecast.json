@@ -1,0 +1,32 @@
+[
+    {
+        "date": "2021-03-31T18:37:11.1903835-03:00",
+        "temperatureC": -11,
+        "temperatureF": 13,
+        "summary": "Cool"
+    },
+    {
+        "date": "2021-04-01T18:37:11.1914791-03:00",
+        "temperatureC": 13,
+        "temperatureF": 55,
+        "summary": "Hot"
+    },
+    {
+        "date": "2021-04-02T18:37:11.1914839-03:00",
+        "temperatureC": 17,
+        "temperatureF": 62,
+        "summary": "Cool"
+    },
+    {
+        "date": "2021-04-03T18:37:11.1914845-03:00",
+        "temperatureC": -1,
+        "temperatureF": 31,
+        "summary": "Cool"
+    },
+    {
+        "date": "2021-04-04T18:37:11.1914848-03:00",
+        "temperatureC": 41,
+        "temperatureF": 105,
+        "summary": "Freezing"
+    }
+]

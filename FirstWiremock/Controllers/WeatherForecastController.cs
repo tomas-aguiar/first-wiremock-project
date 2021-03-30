@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace FirstWiremock.Controllers
 {
@@ -32,12 +33,14 @@ namespace FirstWiremock.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<IEnumerable<WeatherForecast>> Get()
         {
             if (_featureToggle)
             {
                 var client = _httpClientFactory.CreateClient("Wiremock");
-                var response = client.GetAsync(client.BaseAddress + "/WeatherForecast");
+                var response = await client.GetAsync(client.BaseAddress + "/WeatherForecast");
+
+                return await GetResponse(response);
             }
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -47,6 +50,14 @@ namespace FirstWiremock.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        private static async Task<IEnumerable<WeatherForecast>> GetResponse(HttpResponseMessage response)
+        {
+            var result = await response.Content.ReadAsStringAsync();
+            var value = JsonConvert.DeserializeObject<IEnumerable<WeatherForecast>>(result);
+
+            return value;
         }
     }
 }

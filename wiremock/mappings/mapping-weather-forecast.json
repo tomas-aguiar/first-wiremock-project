@@ -1,0 +1,30 @@
+{
+    "id": "083739ba-df23-4c3e-b007-305bdd520217",
+    "request": {
+        "url": "//WeatherForecast",
+        "method": "GET"
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "body-weather-forecast.json",
+        "headers" : {
+            "Cache-Control" : "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma" : "no-cache",
+            "Transfer-Encoding" : "chunked",
+            "Content-Type" : "application/json;charset=UTF-8",
+            "Expires" : "0",
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Methods" : "POST,PUT,GET,OPTIONS,DELETE",
+            "Access-Control-Max-Age" : "3600",
+            "Access-Control-Allow-Credentials" : "true",
+            "Access-Control-Allow-Headers" : "Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization",
+            "Request-Context" : "appId=cid-v1:8bed6653-a3bb-4ef8-959a-85910aca026e",
+            "X-Content-Type-Options" : "nosniff",
+            "X-XSS-Protection" : "1; mode=block",
+            "X-Frame-Options" : "DENY",
+            "Set-Cookie" : "JSESSIONID=48FFB7870D4700734B39A2CC757692BA; Path=/int/fleet-reports-restapi; HttpOnly",
+            "Date" : "Mon, 10 Feb 2020 17:40:09 GMT"
+        }
+    },
+    "uuid": "083739ba-df23-4c3e-b007-305bdd520217"
+}

@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+
+  evo:
+    image:
+      rodolpheche/wiremock:latest
+    container_name: first-wiremock
+    command:
+      --port="7070"
+    ports:
+      - 127.0.0.1:7070:7070
+    volumes:
+      - ./__files:/home/wiremock/__files
+      - ./mappings:/home/wiremock/mappings
+
