@@ -1,3 +1,5 @@
+using System;
+using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +27,13 @@ namespace FirstWiremock
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
+            });
+
+            services.AddHttpClient("Wiremock", client =>
+            {
+                client.BaseAddress = new Uri(Configuration.GetValue<string>("Url"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
             });
         }
 
